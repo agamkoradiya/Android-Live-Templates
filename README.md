@@ -1,3 +1,5 @@
+# Working Progress...
+
 <h1 align="center"> Android-Live-Templates </h1>
 
 <div align="center">
@@ -20,10 +22,13 @@
   - [How to *import all live templates* in 1 minute? 💥](#how-to-import-all-live-templates-in-1-minute-)
   - [CheatSheet for this repository 📄](#cheatsheet-)
       - [Adapter](#-adapter)
-          - [adapter list](#adapterlist)
-          - [adapter normal](#adapternormal)
-      - View binding
-      - Retrofit library
+          - [adapter list](#adapter-list)
+          - [adapter normal](#adapter-normal)
+      - [View binding](#-view-binding)
+          - [binding activity](#binding-activity)
+          - [binding fragment](#binding-fragment)
+      - [Retrofit library](#-retrofit-library)
+          - [retofit instance](#retrofit-instance)
       - Room database
       - Dependency Injection
       - Drawable
@@ -47,8 +52,9 @@ By using them, you can quickly and intelligently add frequently used code patter
 ### 📌 Adapter
 <br>
 
+<div name="adapter-list">
+
 >  <samp> adapter list </samp>
-<div name="adapterlist">
   
 ```kotlin 
 class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter<$TYPE$, $FILE_NAME$.$HOLDER_NAME$ViewHolder>(DiffCallback()) {
@@ -82,8 +88,9 @@ class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter<$TYPE$, $FILE_NAME$
 </div>
 <br>
 
+<div name="adapter-normal">
+
 >  <samp> adapter normal </samp>
-<div name="adapternormal">
   
 ```kotlin
   class $FILE_NAME$ : androidx.recyclerview.widget.RecyclerView.Adapter<$FILE_NAME$.MyViewHolder>() {
@@ -106,12 +113,14 @@ class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter<$TYPE$, $FILE_NAME$
 }
 ```
 </div>
+<br>
 
 ### 📌 View Binding
 <br>
 
+<div name="binding-activity">
+
 >  <samp> binding activity </samp>
-<div name="bindingactivityt">
 
 ```kotlin
 class $FILE_NAME$ : androidx.appcompat.app.AppCompatActivity() {
@@ -127,3 +136,67 @@ class $FILE_NAME$ : androidx.appcompat.app.AppCompatActivity() {
 }
 ```
 </div>
+<br>
+
+<div name="binding-fragment">
+
+>  <samp> binding fragment </samp>
+
+```kotlin
+class $FILE_NAME$ : androidx.fragment.app.Fragment() {
+
+    private var _binding: $BINDING_LAYOUT$? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: android.view.LayoutInflater,
+        container: android.view.ViewGroup?,
+        savedInstanceState: android.os.Bundle?
+    ): android.view.View {
+        _binding = $BINDING_LAYOUT$.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+```
+</div>
+<br>
+
+### 📌 Retrofit Library
+<br>
+
+<div name="retrofit-instance">
+
+>  <samp> retrofit instance </samp>
+
+```kotlin
+class $FILE_NAME$ {
+
+    companion object {
+
+        private val retrofit by lazy {
+            val logging = okhttp3.logging.HttpLoggingInterceptor()
+            logging.setLevel(okhttp3.logging.HttpLoggingInterceptor.Level.$TYPE$)
+            val client = okhttp3.OkHttpClient.Builder()
+                .addInterceptor(logging)
+                .build()
+            retrofit2.Retrofit.Builder()
+                .baseUrl($BASE_URL$)
+                .addConverterFactory(retrofit2.converter.gson.GsonConverterFactory.create())
+                .client(client)
+                .build()
+        }
+
+        val api by lazy {
+            retrofit.create($API_NAME$::class.java)
+        }
+    }
+    
+}
+```
+</div>
+<br>
