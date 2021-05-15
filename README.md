@@ -20,6 +20,7 @@
 
 # Content
   - [What is live template? 😮](#what-is-live-template-)
+  - [Demo 💻](#demo-)
   - [How to *import all live templates* in 1 minute? 💥](#how-to-import-all-live-templates-in-1-minute-)
   - [CheatSheet for this repository 📄](#cheatsheet-)
       - [Adapter](#-adapter)
@@ -61,14 +62,20 @@
           - [util resource](#util-resource)
           - [util toast](#util-toast)
       - [Gradle dependency](#-gradle-dependency)
-  - How to create your own live template? 😊
-  - Suggest me!  ✒️
+  - [How to create your own live templates? 💡](#how-to-create-your-own-live-templates-)
+  - [Suggest me! ✒️](#suggest-me)
+  - [Contribute ❤️](#contribute)
 
 ---
 
 ## What is live template? 😮
 <samp> Live Templates are code snippets that you can insert into your code by typing their abbreviation and pressing tab.
 By using them, you can quickly and intelligently add frequently used code patterns and constructs to your code, letting the IDE do the tedious work for you. </samp>
+
+## Demo 💻
+<img alt="How to import all live templates" src="assets/demoFirst.gif"> </img>
+<img alt="How to import all live templates" src="assets/demoSecond.gif"> </img>
+<br>
 
 ## How to import all live templates in 1 minute? 💥
 <img alt="How to import all live templates" src="assets/howToImport.gif"> </img>
@@ -985,3 +992,20 @@ buildFeatures {
 ```
 </div>
 <br>
+
+## How to create your own live templates? 💡
+<br>
+
+[Official documentation](https://www.jetbrains.com/help/idea/creating-and-editing-live-templates.html)
+
+[Live template variables](https://www.jetbrains.com/help/idea/template-variables.html)
+<br>
+
+## Suggest me
+<br>
+<samp> If you have any suggestion or you want to add any other templates than ping me on </samp> <a href="https://www.instagram.com/code.fun/"><img src="https://img.shields.io/badge/Follow-%40code.fun-red?style=social&logo=instagram" alt="Instagram Badge"/></a>
+<br>
+
+## Contribute
+<samp> Contributions are always welcome!😇 </samp>
+Please read the [contribution guidelines](contributing.md) first.
