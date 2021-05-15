@@ -15,18 +15,115 @@
   <img src="https://badgen.net/github/license/agamkoradiya/Android-Live-Templates" alt="License Badge"/>
 </div>
 
-## Content
-  - [What is live template? 😮](#what-is-live-template)
-  - How to import all live templates in 1 minute? 💥
-  - CheatSheet for this repository 📄
+# Content
+  - [What is live template? 😮](#what-is-live-template-)
+  - [How to *import all live templates* in 1 minute? 💥](#how-to-import-all-live-templates-in-1-minute-)
+  - [CheatSheet for this repository 📄](#cheatsheet-)
+      - [Adapter](#-adapter)
+          - [adapter list](#adapterlist)
+          - [adapter normal](#adapternormal)
+      - View binding
+      - Retrofit library
+      - Room database
+      - Dependency Injection
+      - Drawable
+      - XML
+      - Util
+      - Gradle dependency
   - How to create your own live template? 😊
-  - Suggest me!  :black_nib:
+  - Suggest me!  ✒️
 
 ---
 
-### What is live template?😮
+## What is live template? 😮
 <samp> Live Templates are code snippets that you can insert into your code by typing their abbreviation and pressing tab.
 By using them, you can quickly and intelligently add frequently used code patterns and constructs to your code, letting the IDE do the tedious work for you. </samp>
 
-### How to import all live templates in q minute?
+## How to import all live templates in 1 minute? 💥
 <img alt="How to import all live templates" src="assets/howToImport.gif"> </img>
+
+## CheatSheet 📄
+
+### 📌 Adapter
+<br>
+
+>  <samp> adapter list </samp>
+<div name="adapterlist">
+  
+```kotlin 
+class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter<$TYPE$, $FILE_NAME$.$HOLDER_NAME$ViewHolder>(DiffCallback()) {
+
+    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): $HOLDER_NAME$ViewHolder {
+        val binding =
+            $BINDING$.inflate(
+                android.view.LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        return $HOLDER_NAME$ViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: $HOLDER_NAME$ViewHolder, position: Int) {
+        val currentItem = getItem(position)
+    }
+
+    inner class $HOLDER_NAME$ViewHolder(private val binding: $BINDING$) :
+        androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {}
+
+    class DiffCallback : androidx.recyclerview.widget.DiffUtil.ItemCallback<$TYPE$>() {
+        override fun areItemsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =
+            oldItem.id == newItem.id
+
+        override fun areContentsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =
+            oldItem == newItem
+    }
+}
+```
+</div>
+<br>
+
+>  <samp> adapter normal </samp>
+<div name="adapternormal">
+  
+```kotlin
+  class $FILE_NAME$ : androidx.recyclerview.widget.RecyclerView.Adapter<$FILE_NAME$.MyViewHolder>() {
+
+    class MyViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {}
+
+    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): MyViewHolder {
+        return MyViewHolder(
+            android.view.LayoutInflater.from(parent.context).inflate(R.layout.$LAYOUT$, parent, false)
+        )
+    }
+
+    override fun getItemCount(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+}
+```
+</div>
+
+### 📌 View Binding
+<br>
+
+>  <samp> binding activity </samp>
+<div name="bindingactivityt">
+
+```kotlin
+class $FILE_NAME$ : androidx.appcompat.app.AppCompatActivity() {
+
+    private lateinit var binding: $BINDING_LAYOUT$
+
+    override fun onCreate(savedInstanceState: android.os.Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = $BINDING_LAYOUT$.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+    }
+}
+```
+</div>
