@@ -43,7 +43,7 @@
           - [di retrofit module](#di-retrofit-module)
           - [di room module](#di-room-module)
       - [Drawable](#-drawable)
-          - [shape boubble](#shape-boubble)
+          - [shape bubble](#shape-bubble)
           - [shape halfcircle](#shape-halfcircle)
           - [shape line](#shape-line)
           - [shape oval](#shape-oval)
@@ -78,7 +78,11 @@ By using them, you can quickly and intelligently add frequently used code patter
 <br>
 
 ## How to import all live templates in 1 minute? 💥
+1. Download AndroidLiveTemplates.zip file
+2. Then follow below video tutorial
+<br>
 <img alt="How to import all live templates" src="assets/howToImport.gif"> </img>
+<br>
 
 ## CheatSheet 📄
 
@@ -444,9 +448,9 @@ fun provideDao(database: $DATABASE_CLASS$) = database.$METHOD$
 ### 📌 Drawable
 <br>
 
-<div name="shape-boubble">
+<div name="shape-bubble">
 
->  <samp> shape boubble </samp>
+>  <samp> shape bubble </samp>
 
 ```kotlin
 <?xml version="1.0" encoding="utf-8"?>
