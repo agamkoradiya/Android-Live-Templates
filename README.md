@@ -41,10 +41,26 @@
           - [di hilt app](#di-hilt-app)
           - [di retrofit module](#di-retrofit-module)
           - [di room module](#di-room-module)
-      - [Drawable]
-      - XML
-      - Util
-      - Gradle dependency
+      - [Drawable](#-drawable)
+          - [shape boubble](#shape-boubble)
+          - [shape halfcircle](#shape-halfcircle)
+          - [shape line](#shape-line)
+          - [shape oval](#shape-oval)
+          - [shape ractangle](#shape-ractangle)
+          - [shape ring](#shape-ring)
+          - [shape round](#shape-round)
+          - [state list](#state-list)
+      - [XML](#-xml)
+          - [center_horizontal](#center-horizontal)
+          - [center_horizontal_parent](#center-horizontal-parent)
+          - [center_parent](#center-parent)
+          - [center_vartical](#center-vartical)
+          - [center_vartical_parent](#center-vartical-parent)
+          - [xml_menu](#xml-menu)
+      - [Util](#-util)
+          - [util resource](#util-resource)
+          - [util toast](#util-toast)
+      - [Gradle dependency](#-gradle-dependency)
   - How to create your own live template? 😊
   - Suggest me!  ✒️
 
@@ -418,11 +434,554 @@ fun provideDao(database: $DATABASE_CLASS$) = database.$METHOD$
 </div>
 <br>
 
-### 📌 Dependency Injection
+### 📌 Drawable
 <br>
 
-<div name="di-hilt-app">
+<div name="shape-boubble">
 
->  <samp> di hilt app </samp>
+>  <samp> shape boubble </samp>
 
 ```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners
+        android:bottomRightRadius="10dp"
+        android:radius="40dp" />
+
+    <stroke
+        android:width="1dp"
+        android:color="@color/$STROKE_COLOR$" />
+
+    <size
+        android:width="50dp"
+        android:height="50dp" />
+        
+    <solid android:color="@color/$SOLID_COLOR$" />
+
+</shape>
+```
+</div>
+<br>
+
+<div name="shape-halfcircle">
+
+>  <samp> shape halfcircle </samp>
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners
+        android:topLeftRadius="60dp"
+        android:topRightRadius="60dp" />
+
+    <size
+        android:width="120dp"
+        android:height="60dp" />
+
+    <solid android:color="@color/$SOLID_COLOR$" />
+
+</shape>
+```
+</div>
+<br>
+
+<div name="shape-line">
+
+>  <samp> shape line </samp>
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="line">
+
+    <stroke
+        android:width="3dp"
+        android:color="@color/$STROKE_COLOR$" />
+
+    <size android:height="1dp" />
+
+</shape>
+```
+</div>
+<br>
+
+<div name="shape-oval">
+
+>  <samp> shape oval </samp>
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <stroke
+        android:width="3dp"
+        android:color="@color/$STROKE_COLOR$" />
+
+    <solid android:color="@color/$SOLID_COLOR$" />
+
+</shape>
+```
+</div>
+<br>
+
+<div name="shape-ractangle">
+
+>  <samp> shape ractangle </samp>
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <corners android:radius="10dp" />
+
+    <stroke
+        android:width="3dp"
+        android:color="@color/$STROKE_COLOR$" />
+
+    <solid android:color="@color/$SOLID_COLOR$" />
+
+</shape>
+```
+</div>
+<br>
+
+<div name="shape-ring">
+
+>  <samp> shape ring </samp>
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:thickness="5dp"
+    android:useLevel="false">
+    
+    <solid android:color="@color/$SOLID_COLOR$" />
+
+</shape>
+```
+</div>
+<br>
+
+<div name="shape-round">
+
+>  <samp> shape round </samp>
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:innerRadius="0dp"
+    android:shape="ring"
+    android:thickness="100dp"
+    android:useLevel="false">
+
+    <solid android:color="@color/$SOLID_COLOR$" />
+
+</shape>
+```
+</div>
+<br>
+
+<div name="state-list">
+
+>  <samp> state list </samp>
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/$DRAWABLE1$" android:state_pressed="true" /> <!-- pressed -->
+    <item android:drawable="@drawable/$DRAWABLE2$" android:state_focused="true" /> <!-- focused -->
+    <item android:drawable="@drawable/$DRAWABLE3$" android:state_hovered="true" /> <!-- hovered -->
+    <item android:drawable="@drawable/$DRAWABLE4$" android:state_selected="true" /> <!-- selected -->
+    <item android:drawable="@drawable/$DRAWABLE5$" android:state_checkable="true" /> <!-- checkable -->
+    <item android:drawable="@drawable/$DRAWABLE6$" android:state_checked="true" /> <!-- checked -->
+    <item android:drawable="@drawable/$DRAWABLE7$" android:state_enabled="true" /> <!-- enabled -->
+    <item android:drawable="@drawable/$DRAWABLE8$" android:state_activated="true" /> <!-- activated -->
+    <item android:drawable="@drawable/$DRAWABLE9$" android:state_window_focused="true" /> <!-- window_focused -->
+    <item android:drawable="@drawable/$DRAWABLE$" /> <!-- default -->
+</selector>
+```
+</div>
+<br>
+
+### 📌 XML
+<br>
+
+<div name="center-horizontal">
+
+>  <samp> center_horizontal </samp>
+
+```kotlin
+        app:layout_constraintEnd_toStartOf="@+id/$VIEWIDSTART$"
+        app:layout_constraintStart_toEndOf="@+id/$VIEWIDEND$"
+```
+</div>
+<br>
+
+<div name="center-horizontal-parent">
+
+>  <samp> center_horizontal_parent </samp>
+
+```kotlin
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+```
+</div>
+<br>
+
+<div name="center-parent">
+
+>  <samp> center_parent </samp>
+
+```kotlin
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+```
+</div>
+<br>
+
+<div name="center-vartical">
+
+>  <samp> center_vartical </samp>
+
+```kotlin
+        app:layout_constraintBottom_toTopOf="@+id/$VIEWIDTOP$"
+        app:layout_constraintTop_toBottomOf="@+id/$VIEWIDBOTTOM$"
+```
+</div>
+<br>
+
+<div name="center-vartical-parent">
+
+>  <samp> center_vartical_parent </samp>
+
+```kotlin
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+```
+</div>
+<br>
+
+<div name="xml-menu">
+
+>  <samp> xml_menu </samp>
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_$ID1$"
+        android:icon="@drawable/$ICON1$"
+        android:title="@string/$TITLE1$"
+        app:showAsAction="$ACTION1$" />
+
+    <item
+        android:id="@+id/menu_$ID2$"
+        android:icon="@drawable/$ICON2$"
+        android:title="@string/$TITLE2$"
+        app:showAsAction="$ACTION2$" />
+        
+    <item
+        android:id="@+id/menu_$ID3$"
+        android:icon="@drawable/$ICON3$"
+        android:title="@string/$TITLE3$"
+        app:showAsAction="$ACTION3$" />
+        
+        <item
+        android:id="@+id/menu_$ID4$"
+        android:icon="@drawable/$ICON4$"
+        android:title="@string/$TITLE4$"
+        app:showAsAction="$ACTION4$" />
+        
+    <item
+        android:id="@+id/menu_$ID5$"
+        android:icon="@drawable/$ICON5$"
+        android:title="@string/$TITLE5$"
+        app:showAsAction="$ACTION5$" />
+        
+</menu>
+```
+</div>
+<br>
+
+### 📌 Util
+<br>
+
+<div name="util-resource">
+
+>  <samp> util resource </samp>
+
+```kotlin
+sealed class Resource<T>(val data: T?, val message: String?) {
+    class Success<T>(data: T) : Resource<T>(data, null)
+    class Error<T>(message: String) : Resource<T>(null, message)
+}
+```
+</div>
+<br>
+
+<div name="util-toast">
+
+>  <samp> util toast </samp>
+
+```kotlin
+fun android.content.Context.toast(message: CharSequence) =
+    android.widget.Toast.makeText(this, message, android.widget.Toast.$LENGTH$).show()
+```
+</div>
+<br>
+
+### 📌 Gradle dependency
+<br>
+
+<div name="coil-depen">
+
+>  <samp> coil depen </samp>
+
+```kotlin
+// Coil Image Loading Library
+    implementation "io.coil-kt:coil:1.2.1"
+```
+</div>
+<br>
+
+<div name="coroutines-depen">
+
+>  <samp> coroutines depen </samp>
+
+```kotlin
+// Coroutines Dependency
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3"
+```
+</div>
+<br>
+
+<div name="data-binding">
+
+>  <samp> data binding </samp>
+
+```kotlin
+apply plugin: 'kotlin-kapt'
+
+buildFeatures {
+    dataBinding true
+}
+```
+</div>
+<br>
+
+<div name="datastore-depen">
+
+>  <samp> datastore depen </samp>
+
+```kotlin
+// Data store
+// Typed DataStore (Typed API surface, such as Proto)
+    implementation "androidx.datastore:datastore:1.0.0-beta01"
+// Preferences DataStore (SharedPreferences like APIs)
+    implementation "androidx.datastore:datastore-preferences:1.0.0-beta01"
+```
+</div>
+<br>
+
+<div name="easy-permission-depen">
+
+>  <samp> easy permission depen </samp>
+
+```kotlin
+// Easy permission library
+    implementation 'com.vmadalin:easypermissions-ktx:1.0.0'
+```
+</div>
+<br>
+
+<div name="glide-depen">
+
+>  <samp> glide depen </samp>
+
+```kotlin
+// Glide Image Loading Library
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+```
+</div>
+<br>
+
+<div name="hilt-classpath">
+
+>  <samp> hilt classpath </samp>
+
+```kotlin
+classpath "com.google.dagger:hilt-android-gradle-plugin:2.35"
+```
+</div>
+<br>
+
+<div name="hilt depen">
+
+>  <samp> hilt depen </samp>
+
+```kotlin
+// Hilt Dependency Injection
+    implementation "com.google.dagger:hilt-android:2.35"
+    kapt "com.google.dagger:hilt-compiler:2.35"
+```
+</div>
+<br>
+
+<div name="hilt-plugin">
+
+>  <samp> hilt plugin </samp>
+
+```kotlin
+id 'kotlin-kapt'
+id 'dagger.hilt.android.plugin'
+```
+</div>
+<br>
+
+<div name="lifecycle-depen">
+
+>  <samp> lifecycle depen </samp>
+
+```kotlin
+// ViewModel
+implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+
+// LiveData
+implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+
+// Lifecycles only (without ViewModel or LiveData)
+implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1"
+
+// Saved state module for ViewModel
+implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1"
+
+// Annotation processor
+kapt "androidx.lifecycle:lifecycle-compiler:2.3.1"
+
+// alternately - if using Java8, use the following instead of lifecycle-compiler
+implementation "androidx.lifecycle:lifecycle-common-java8:2.3.1"
+```
+</div>
+<br>
+
+<div name="navigation-depen">
+
+>  <samp> navigation depen </samp>
+
+```kotlin
+// Navigation Component
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
+```
+</div>
+<br>
+
+<div name="paging-depen">
+
+>  <samp> paging depen </samp>
+
+```kotlin
+// Paging 3
+    implementation "androidx.paging:paging-runtime-ktx:3.0.0"
+```
+</div>
+<br>
+
+<div name="retrofit-depen">
+
+>  <samp> retrofit depen </samp>
+
+```kotlin
+// Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation "com.squareup.okhttp3:okhttp:4.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.5.0"
+```
+</div>
+<br>
+
+<div name="room-depen">
+
+>  <samp> room depen </samp>
+
+```kotlin
+// Room
+    // kapt plugin: cut it and paste in plugins
+    id 'kotlin-kapt'
+    
+    implementation "androidx.room:room-runtime:2.3.0"
+    // To use Kotlin annotation processing tool (kapt)
+    kapt "androidx.room:room-compiler:2.3.0"
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:2.3.0"
+```
+</div>
+<br>
+
+<div name="safeargs-classpath">
+
+>  <samp> safeargs classpath </samp>
+
+```kotlin
+classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5"
+```
+</div>
+<br>
+
+<div name="safeargs-plugin">
+
+>  <samp> safeargs plugin </samp>
+
+```kotlin
+id 'androidx.navigation.safeargs.kotlin'
+```
+</div>
+<br>
+
+<div name="view-and-data-binding">
+
+>  <samp> view and data binding </samp>
+
+```kotlin
+buildFeatures {
+    viewBinding true
+    dataBinding true
+}
+id 'kotlin-kapt'
+```
+</div>
+<br>
+
+<div name="view-binding">
+
+>  <samp> view binding </samp>
+
+```kotlin
+buildFeatures {
+    viewBinding true
+}
+```
+</div>
+<br>
