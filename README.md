@@ -14,3 +14,19 @@
   <img src="https://badgen.net/github/contributors/agamkoradiya/Android-Live-Templates" alt="Contributors Badge"/>
   <img src="https://badgen.net/github/license/agamkoradiya/Android-Live-Templates" alt="License Badge"/>
 </div>
+
+## Content
+  - [What is live template? 😮](#what-is-live-template)
+  - How to import all live templates in 1 minute? 💥
+  - CheatSheet for this repository 📄
+  - How to create your own live template? 😊
+  - Suggest me!  :black_nib:
+
+---
+
+### What is live template?😮
+<samp> Live Templates are code snippets that you can insert into your code by typing their abbreviation and pressing tab.
+By using them, you can quickly and intelligently add frequently used code patterns and constructs to your code, letting the IDE do the tedious work for you. </samp>
+
+### How to import all live templates in q minute?
+<img alt="How to import all live templates" src="assets/howToImport.gif"> </img>
