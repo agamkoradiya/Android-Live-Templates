@@ -1,5 +1,3 @@
-# Working Progress...
-
 <h1 align="center"> Android-Live-Templates </h1>
 
 <div align="center">
