@@ -1,0 +1,62 @@
+<templateSet group="LiveDrawable">
+  <template name="shape ractangle" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&#10;&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:shape=&quot;rectangle&quot;&gt;&#10;&#10;    &lt;corners android:radius=&quot;10dp&quot; /&gt;&#10;&#10;    &lt;stroke&#10;        android:width=&quot;3dp&quot;&#10;        android:color=&quot;@color/$STROKE_COLOR$&quot; /&gt;&#10;&#10;    &lt;solid android:color=&quot;@color/$SOLID_COLOR$&quot; /&gt;&#10;&#10;&lt;/shape&gt;" description="To draw filled ractangle" toReformat="true" toShortenFQNames="true">
+    <variable name="STROKE_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="SOLID_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="shape oval" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&#10;&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:shape=&quot;oval&quot;&gt;&#10;&#10;    &lt;stroke&#10;        android:width=&quot;3dp&quot;&#10;        android:color=&quot;@color/$STROKE_COLOR$&quot; /&gt;&#10;&#10;    &lt;solid android:color=&quot;@color/$SOLID_COLOR$&quot; /&gt;&#10;&#10;&lt;/shape&gt;" description="To draw filled oval" toReformat="true" toShortenFQNames="true">
+    <variable name="STROKE_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="SOLID_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="shape ring" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&#10;&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:shape=&quot;ring&quot;&#10;    android:thickness=&quot;5dp&quot;&#10;    android:useLevel=&quot;false&quot;&gt;&#10;    &#10;    &lt;solid android:color=&quot;@color/$SOLID_COLOR$&quot; /&gt;&#10;&#10;&lt;/shape&gt;" description="To draw ring" toReformat="true" toShortenFQNames="true">
+    <variable name="SOLID_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="shape line" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&#10;&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:shape=&quot;line&quot;&gt;&#10;&#10;    &lt;stroke&#10;        android:width=&quot;3dp&quot;&#10;        android:color=&quot;@color/$STROKE_COLOR$&quot; /&gt;&#10;&#10;    &lt;size android:height=&quot;1dp&quot; /&gt;&#10;&#10;&lt;/shape&gt;" description="To draw line" toReformat="true" toShortenFQNames="true">
+    <variable name="STROKE_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="shape halfcircle" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&#10;&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:shape=&quot;rectangle&quot;&gt;&#10;&#10;    &lt;corners&#10;        android:topLeftRadius=&quot;60dp&quot;&#10;        android:topRightRadius=&quot;60dp&quot; /&gt;&#10;&#10;    &lt;size&#10;        android:width=&quot;120dp&quot;&#10;        android:height=&quot;60dp&quot; /&gt;&#10;&#10;    &lt;solid android:color=&quot;@color/$SOLID_COLOR$&quot; /&gt;&#10;&#10;&lt;/shape&gt;" description="To draw filled half circle" toReformat="true" toShortenFQNames="true">
+    <variable name="SOLID_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="shape round" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&#10;&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:innerRadius=&quot;0dp&quot;&#10;    android:shape=&quot;ring&quot;&#10;    android:thickness=&quot;100dp&quot;&#10;    android:useLevel=&quot;false&quot;&gt;&#10;&#10;    &lt;solid android:color=&quot;@color/$SOLID_COLOR$&quot; /&gt;&#10;&#10;&lt;/shape&gt;" description="To draw filled round" toReformat="true" toShortenFQNames="true">
+    <variable name="SOLID_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="shape bubble" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&#10;&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    android:shape=&quot;rectangle&quot;&gt;&#10;&#10;    &lt;corners&#10;        android:bottomRightRadius=&quot;10dp&quot;&#10;        android:radius=&quot;40dp&quot; /&gt;&#10;&#10;    &lt;stroke&#10;        android:width=&quot;1dp&quot;&#10;        android:color=&quot;@color/$STROKE_COLOR$&quot; /&gt;&#10;&#10;    &lt;size&#10;        android:width=&quot;50dp&quot;&#10;        android:height=&quot;50dp&quot; /&gt;&#10;        &#10;    &lt;solid android:color=&quot;@color/$SOLID_COLOR$&quot; /&gt;&#10;&#10;&lt;/shape&gt;" description="To draw filled bubble" toReformat="true" toShortenFQNames="true">
+    <variable name="STROKE_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="SOLID_COLOR" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="state list" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&#10;&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE1$&quot; android:state_pressed=&quot;true&quot; /&gt; &lt;!-- pressed --&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE2$&quot; android:state_focused=&quot;true&quot; /&gt; &lt;!-- focused --&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE3$&quot; android:state_hovered=&quot;true&quot; /&gt; &lt;!-- hovered --&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE4$&quot; android:state_selected=&quot;true&quot; /&gt; &lt;!-- selected --&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE5$&quot; android:state_checkable=&quot;true&quot; /&gt; &lt;!-- checkable --&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE6$&quot; android:state_checked=&quot;true&quot; /&gt; &lt;!-- checked --&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE7$&quot; android:state_enabled=&quot;true&quot; /&gt; &lt;!-- enabled --&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE8$&quot; android:state_activated=&quot;true&quot; /&gt; &lt;!-- activated --&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE9$&quot; android:state_window_focused=&quot;true&quot; /&gt; &lt;!-- window_focused --&gt;&#10;    &lt;item android:drawable=&quot;@drawable/$DRAWABLE$&quot; /&gt; &lt;!-- default --&gt;&#10;&lt;/selector&gt;&#10;" description="To add all state" toReformat="true" toShortenFQNames="true">
+    <variable name="DRAWABLE1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DRAWABLE2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DRAWABLE3" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DRAWABLE4" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DRAWABLE5" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DRAWABLE6" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DRAWABLE7" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DRAWABLE8" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DRAWABLE9" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DRAWABLE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>

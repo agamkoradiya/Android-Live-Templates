@@ -1,0 +1,16 @@
+<templateSet group="LiveViewBinding">
+  <template name="binding activity" value="class $FILE_NAME$ : androidx.appcompat.app.AppCompatActivity() {&#10;&#10;    private lateinit var binding: $BINDING_LAYOUT$&#10;&#10;    override fun onCreate(savedInstanceState: android.os.Bundle?) {&#10;        super.onCreate(savedInstanceState)&#10;        binding = $BINDING_LAYOUT$.inflate(layoutInflater)&#10;        val view = binding.root&#10;        setContentView(view)&#10;    }&#10;}" description="Activity with view binding" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="BINDING_LAYOUT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="binding fragment" value="class $FILE_NAME$ : androidx.fragment.app.Fragment() {&#10;&#10;    private var _binding: $BINDING_LAYOUT$? = null&#10;    private val binding get() = _binding!!&#10;&#10;    override fun onCreateView(&#10;        inflater: android.view.LayoutInflater,&#10;        container: android.view.ViewGroup?,&#10;        savedInstanceState: android.os.Bundle?&#10;    ): android.view.View {&#10;        _binding = $BINDING_LAYOUT$.inflate(inflater, container, false)&#10;        return binding.root&#10;    }&#10;&#10;    override fun onDestroyView() {&#10;        super.onDestroyView()&#10;        _binding = null&#10;    }&#10;}" description="Fragment with view binding" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="BINDING_LAYOUT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+</templateSet>

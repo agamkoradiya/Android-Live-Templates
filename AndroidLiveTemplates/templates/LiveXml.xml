@@ -1,0 +1,56 @@
+<templateSet group="LiveXml">
+  <template name="center_parent" value="        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;&#10;        app:layout_constraintLeft_toLeftOf=&quot;parent&quot;&#10;        app:layout_constraintRight_toRightOf=&quot;parent&quot;&#10;        app:layout_constraintTop_toTopOf=&quot;parent&quot;" description="Set view in the center of parent" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML_ATTRIBUTE" value="true" />
+    </context>
+  </template>
+  <template name="center_vartical" value="        app:layout_constraintBottom_toTopOf=&quot;@+id/$VIEWIDTOP$&quot;&#10;        app:layout_constraintTop_toBottomOf=&quot;@+id/$VIEWIDBOTTOM$&quot;" description="Set vertical constraint on view" toReformat="true" toShortenFQNames="true">
+    <variable name="VIEWIDTOP" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VIEWIDBOTTOM" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_ATTRIBUTE" value="true" />
+    </context>
+  </template>
+  <template name="center_vartical_parent" value="        app:layout_constraintBottom_toBottomOf=&quot;parent&quot;&#10;        app:layout_constraintTop_toTopOf=&quot;parent&quot;" description="Set vertical constraint in parent" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML_ATTRIBUTE" value="true" />
+    </context>
+  </template>
+  <template name="center_horizontal_parent" value="        app:layout_constraintEnd_toEndOf=&quot;parent&quot;&#10;        app:layout_constraintStart_toStartOf=&quot;parent&quot;" description="Set horizontal constraint in parent" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML_ATTRIBUTE" value="true" />
+    </context>
+  </template>
+  <template name="center_horizontal" value="        app:layout_constraintEnd_toStartOf=&quot;@+id/$VIEWIDSTART$&quot;&#10;        app:layout_constraintStart_toEndOf=&quot;@+id/$VIEWIDEND$&quot;" description="Set horizontal constraint on view" toReformat="true" toShortenFQNames="true">
+    <variable name="VIEWIDSTART" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VIEWIDEND" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML_ATTRIBUTE" value="true" />
+    </context>
+  </template>
+  <template name="xml_menu" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;menu xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&#10;    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;&gt;&#10;&#10;    &lt;item&#10;        android:id=&quot;@+id/menu_$ID1$&quot;&#10;        android:icon=&quot;@drawable/$ICON1$&quot;&#10;        android:title=&quot;@string/$TITLE1$&quot;&#10;        app:showAsAction=&quot;$ACTION1$&quot; /&gt;&#10;&#10;    &lt;item&#10;        android:id=&quot;@+id/menu_$ID2$&quot;&#10;        android:icon=&quot;@drawable/$ICON2$&quot;&#10;        android:title=&quot;@string/$TITLE2$&quot;&#10;        app:showAsAction=&quot;$ACTION2$&quot; /&gt;&#10;        &#10;    &lt;item&#10;        android:id=&quot;@+id/menu_$ID3$&quot;&#10;        android:icon=&quot;@drawable/$ICON3$&quot;&#10;        android:title=&quot;@string/$TITLE3$&quot;&#10;        app:showAsAction=&quot;$ACTION3$&quot; /&gt;&#10;        &#10;        &lt;item&#10;        android:id=&quot;@+id/menu_$ID4$&quot;&#10;        android:icon=&quot;@drawable/$ICON4$&quot;&#10;        android:title=&quot;@string/$TITLE4$&quot;&#10;        app:showAsAction=&quot;$ACTION4$&quot; /&gt;&#10;        &#10;    &lt;item&#10;        android:id=&quot;@+id/menu_$ID5$&quot;&#10;        android:icon=&quot;@drawable/$ICON5$&quot;&#10;        android:title=&quot;@string/$TITLE5$&quot;&#10;        app:showAsAction=&quot;$ACTION5$&quot; /&gt;&#10;        &#10;&lt;/menu&gt;&#10;" description="To create menu with 5 option" toReformat="true" toShortenFQNames="true">
+    <variable name="ID1" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ICON1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTION1" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ICON2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTION2" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID3" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ICON3" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE3" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTION3" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID4" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ICON4" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE4" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTION4" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ID5" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ICON5" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="TITLE5" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTION5" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>

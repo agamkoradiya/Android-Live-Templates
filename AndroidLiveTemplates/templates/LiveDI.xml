@@ -1,0 +1,26 @@
+<templateSet group="LiveDI">
+  <template name="di hilt app" value="@dagger.hilt.android.HiltAndroidApp&#10;class $FILE_NAME$ : android.app.Application() {&#10;}" description="To create Application class for Hilt" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="di room module" value="@javax.inject.Singleton&#10;@dagger.Provides&#10;fun provideDatabase(&#10;    @dagger.hilt.android.qualifiers.ApplicationContext context: android.content.Context&#10;) = androidx.room.Room.databaseBuilder(&#10;    context,&#10;    $DATABASE_CLASS$::class.java,&#10;    &quot;$DATABASE_NAME$&quot;&#10;).build()&#10;&#10;@javax.inject.Singleton&#10;@dagger.Provides&#10;fun provideDao(database: $DATABASE_CLASS$) = database.$METHOD$" description="To create room module" toReformat="true" toShortenFQNames="true">
+    <variable name="DATABASE_CLASS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DATABASE_NAME" expression="snakeCase(DATABASE_CLASS)" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+      <option name="KOTLIN_OBJECT_DECLARATION" value="true" />
+    </context>
+  </template>
+  <template name="di retrofit module" value="@javax.inject.Singleton&#10;@dagger.Provides&#10;fun provideRetrofit(): retrofit2.Retrofit =&#10;    retrofit2.Retrofit.Builder()&#10;        .baseUrl($BASE_URL$)&#10;        .addConverterFactory(retrofit2.converter.gson.GsonConverterFactory.create())&#10;        .build()&#10;&#10;@javax.inject.Singleton&#10;@dagger.Provides&#10;fun provide$API_NAME$(retrofit: retrofit2.Retrofit): $API$ =&#10;    retrofit.create($API$::class.java)&#10;    " description="To create retrofit module" toReformat="true" toShortenFQNames="true">
+    <variable name="BASE_URL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="API_NAME" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="API" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+      <option name="KOTLIN_OBJECT_DECLARATION" value="true" />
+    </context>
+  </template>
+</templateSet>

@@ -1,0 +1,46 @@
+<templateSet group="LiveRoomDb">
+  <template name="room dao" value="import androidx.room.*&#10;&#10;@Dao&#10;interface $FILE_NAME$ {&#10;&#10;    @Insert(onConflict = OnConflictStrategy.REPLACE)&#10;    suspend fun insert$TABLE_NAME$($VAR_NAME$: $TABLE_NAME$)&#10;    &#10;    @Insert(onConflict = OnConflictStrategy.REPLACE)&#10;    suspend fun insertAll$TABLE_NAME$(vararg $VAR_NAME$s: $TABLE_NAME$)&#10;&#10;    @Update&#10;    suspend fun update($VAR_NAME$: $TABLE_NAME$)&#10;&#10;    @Delete&#10;    suspend fun delete($VAR_NAME$: $TABLE_NAME$)&#10;&#10;    @Query(&quot;SELECT * FROM $VAR_NAME$&quot;)&#10;    fun getAll$TABLE_NAME$(): List&lt;$TABLE_NAME$&gt;&#10;&#10;}" description="To create Room Dao" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="TABLE_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR_NAME" expression="decapitalize(TABLE_NAME)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="room db with singleton" value="@androidx.room.Database(&#10;    entities = [$TABLE_NAME$::class],&#10;    version = 1,&#10;    exportSchema = false&#10;)&#10;@androidx.room.TypeConverters($CONVERTER_NAME$::class)&#10;abstract class $FILE_NAME$ : androidx.room.RoomDatabase() {&#10;&#10;    abstract fun $DAO_NAME$(): $DAO_TYPE$&#10;&#10;    companion object {&#10;        @Volatile&#10;        private var INSTANCE: $FILE_NAME$? = null&#10;        private val LOCK = Any()&#10;&#10;        fun getDatabase(context: android.content.Context): $FILE_NAME$ =&#10;            INSTANCE ?: synchronized(LOCK) {&#10;                INSTANCE&#10;                    ?: buildDatabase(context).also { INSTANCE = it }&#10;            }&#10;&#10;        private fun buildDatabase(context: android.content.Context) =&#10;            androidx.room.Room.databaseBuilder(&#10;                context.applicationContext,&#10;                $FILE_NAME$::class.java, &quot;$DB_NAME$.db&quot;&#10;            ).build()&#10;    }&#10;}" description="To create Room DB with singleton &amp; without DI" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CONVERTER_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="DAO_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DAO_TYPE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="DB_NAME" expression="snakeCase(FILE_NAME)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="room db" value="@androidx.room.Database(&#10;    entities = [$TABLE_NAME$::class],&#10;    version = 1,&#10;    exportSchema = false&#10;)&#10;@androidx.room.TypeConverters($CONVERTER_NAME$::class)&#10;abstract class $FILE_NAME$ : androidx.room.RoomDatabase() {&#10;&#10;    abstract fun $DAO_NAME$(): $DAO_TYPE$&#10;    &#10;}" description="To create Room DB" toReformat="true" toShortenFQNames="true">
+    <variable name="TABLE_NAME" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CONVERTER_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="DAO_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DAO_TYPE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="room converter for list of string" value="// List&lt;String&gt; &lt;-&gt; String&#10;@androidx.room.TypeConverter&#10;fun fromList(list: List&lt;String&gt;): String {&#10;    return com.google.gson.Gson().toJson(list)&#10;}&#10;&#10;@androidx.room.TypeConverter&#10;fun toList(string: String): List&lt;String&gt; {&#10;    return com.google.gson.Gson().fromJson(string, object : com.google.gson.reflect.TypeToken&lt;List&lt;String&gt;&gt;() {}.type)&#10;}" description="Converter methods for List&lt;String&gt; &lt;-&gt; String" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="room converter for bitmap" value="// Bitmap &lt;-&gt; ByteArray&#10;@androidx.room.TypeConverter&#10;fun fromBitmap(bitmap: android.graphics.Bitmap): ByteArray {&#10;    val outputStream = java.io.ByteArrayOutputStream()&#10;    bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG, 100, outputStream)&#10;    return outputStream.toByteArray()&#10;}&#10;&#10;@androidx.room.TypeConverter&#10;fun toBitmap(byteArray: ByteArray): android.graphics.Bitmap {&#10;    return android.graphics.BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)&#10;}" description="Converter methods for Bitmap &lt;-&gt; ByteArray" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="room converter for date" value="// Date &lt;-&gt; Long&#10;@androidx.room.TypeConverter&#10;fun fromTimestamp(value: Long?): java.util.Date? {&#10;    return value?.let { java.util.Date(it) }&#10;}&#10;&#10;@androidx.room.TypeConverter&#10;fun dateToTimestamp(date: java.util.Date?): Long? {&#10;    return date?.time?.toLong()&#10;}" description="Converter methods for Date &lt;-&gt; Long" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+</templateSet>

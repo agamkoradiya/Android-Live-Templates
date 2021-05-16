@@ -1,0 +1,11 @@
+<templateSet group="LiveRetrofit">
+  <template name="retrofit instance" value="class $FILE_NAME$ {&#10;&#10;    companion object {&#10;&#10;        private val retrofit by lazy {&#10;            val logging = okhttp3.logging.HttpLoggingInterceptor()&#10;            logging.setLevel(okhttp3.logging.HttpLoggingInterceptor.Level.$TYPE$)&#10;            val client = okhttp3.OkHttpClient.Builder()&#10;                .addInterceptor(logging)&#10;                .build()&#10;            retrofit2.Retrofit.Builder()&#10;                .baseUrl($BASE_URL$)&#10;                .addConverterFactory(retrofit2.converter.gson.GsonConverterFactory.create())&#10;                .client(client)&#10;                .build()&#10;        }&#10;&#10;        val api by lazy {&#10;            retrofit.create($API_NAME$::class.java)&#10;        }&#10;    }&#10;    &#10;}" description="To create retrofit instance" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="BASE_URL" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="API_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+</templateSet>

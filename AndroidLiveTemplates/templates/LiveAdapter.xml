@@ -1,0 +1,18 @@
+<templateSet group="LiveAdapter">
+  <template name="adapter list" value="class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter&lt;$TYPE$, $FILE_NAME$.$HOLDER_NAME$ViewHolder&gt;(DiffCallback()) {&#10;&#10;    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): $HOLDER_NAME$ViewHolder {&#10;        val binding =&#10;            $BINDING$.inflate(&#10;                android.view.LayoutInflater.from(parent.context),&#10;                parent,&#10;                false&#10;            )&#10;        return $HOLDER_NAME$ViewHolder(binding)&#10;    }&#10;&#10;    override fun onBindViewHolder(holder: $HOLDER_NAME$ViewHolder, position: Int) {&#10;        val currentItem = getItem(position)&#10;    }&#10;&#10;    inner class $HOLDER_NAME$ViewHolder(private val binding: $BINDING$) :&#10;        androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {}&#10;&#10;    class DiffCallback : androidx.recyclerview.widget.DiffUtil.ItemCallback&lt;$TYPE$&gt;() {&#10;        override fun areItemsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =&#10;            oldItem.id == newItem.id&#10;&#10;        override fun areContentsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =&#10;            oldItem == newItem&#10;    }&#10;}" description="To create list adapter" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="HOLDER_NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="BINDING" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="adapter normal" value="class $FILE_NAME$ : androidx.recyclerview.widget.RecyclerView.Adapter&lt;$FILE_NAME$.MyViewHolder&gt;() {&#10;&#10;    class MyViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {}&#10;&#10;    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): MyViewHolder {&#10;        return MyViewHolder(&#10;            android.view.LayoutInflater.from(parent.context).inflate(R.layout.$LAYOUT$, parent, false)&#10;        )&#10;    }&#10;&#10;    override fun getItemCount(): Int {&#10;        TODO(&quot;Not yet implemented&quot;)&#10;    }&#10;&#10;    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {&#10;        TODO(&quot;Not yet implemented&quot;)&#10;    }&#10;}" description="To create normal adapter" toReformat="true" toShortenFQNames="true">
+    <variable name="FILE_NAME" expression="fileNameWithoutExtension()" defaultValue="" alwaysStopAt="false" />
+    <variable name="LAYOUT" expression="completeSmart()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+</templateSet>

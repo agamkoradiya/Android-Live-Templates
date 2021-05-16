@@ -1,0 +1,149 @@
+<templateSet group="Groovy">
+  <template name="serr" value="System.err.println(&quot;$END$&quot;)" description="Prints a string to System.err" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="sout" value="println $END$" description="Prints a string to System.out" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="souf" value="printf &quot;$END$&quot;" description="Prints a formatted string to System.out" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="soutm" value="println &quot;$CLASS_NAME$.$METHOD_NAME$&quot;" description="Prints current class and method names to System.out" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="false" />
+    <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="soutp" value="println &quot;$FORMAT$&quot;" description="Prints method parameter names and values to System.out" toReformat="true" toShortenFQNames="true">
+    <variable name="FORMAT" expression="groovyScript(&quot;_1.collect { it + ' = $' + it}.join(', ')&quot;, methodParameters())" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="soutv" value="println &quot;$EXPR_COPY$ = $DOLLAR$$EXPR$&quot;" description="Prints a value to System.out" toReformat="true" toShortenFQNames="true">
+    <variable name="DOLLAR" expression="" defaultValue="&quot;$&quot;" alwaysStopAt="false" />
+    <variable name="EXPR" expression="variableOfType(&quot;&quot;)" defaultValue="&quot;expr&quot;" alwaysStopAt="true" />
+    <variable name="EXPR_COPY" expression="EXPR" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="fori" value="for($INDEX$ in 0..&lt;$LIMIT$) {&#10;  $END$&#10;}" description="Create iteration loop" toReformat="true" toShortenFQNames="true">
+    <variable name="INDEX" expression="suggestIndexName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="LIMIT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="itar" value="for(int $INDEX$ = 0; $INDEX$ &lt; $ARRAY$.length; $INDEX$++) {&#10;  $ELEMENT_TYPE$ $VAR$ = $ARRAY$[$INDEX$];&#10;  $END$&#10;}" description="Iterate elements of array" toReformat="true" toShortenFQNames="true">
+    <variable name="INDEX" expression="suggestIndexName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="arrayVariable()" defaultValue="&quot;array&quot;" alwaysStopAt="true" />
+    <variable name="ELEMENT_TYPE" expression="componentTypeOf(ARRAY)" defaultValue="" alwaysStopAt="false" />
+    <variable name="VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="itco" value="for($ITER_TYPE$ $ITER$ = $COLLECTION$.iterator(); $ITER$.hasNext(); ) {&#10;  $ELEMENT_TYPE$ $VAR$ =$CAST$ $ITER$.next();&#10;  $END$&#10;}" description="Iterate elements of java.util.Collection" toReformat="true" toShortenFQNames="true">
+    <variable name="ITER" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="COLLECTION" expression="variableOfType(&quot;java.util.Collection&quot;)" defaultValue="&quot;collection&quot;" alwaysStopAt="true" />
+    <variable name="ELEMENT_TYPE" expression="guessElementType(COLLECTION)" defaultValue="&quot;Object&quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ITER_TYPE" expression="rightSideType()" defaultValue="&quot;java.util.Iterator&quot;" alwaysStopAt="false" />
+    <variable name="CAST" expression="castToLeftSideType()" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="iten" value="while($ENUM$.hasMoreElements()){&#10;  $TYPE$ $VAR$ = $CAST$ $ENUM$.nextElement();&#10;  $END$&#10;}" description="Iterate java.util.Enumeration" toReformat="true" toShortenFQNames="true">
+    <variable name="ENUM" expression="variableOfType(&quot;java.util.Enumeration&quot;)" defaultValue="&quot;enumeration&quot;" alwaysStopAt="true" />
+    <variable name="TYPE" expression="rightSideType()" defaultValue="&quot;Object&quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CAST" expression="castToLeftSideType()" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="itit" value="while($ITER$.hasNext()){&#10;  $TYPE$ $VAR$ = $CAST$ $ITER$.next();&#10;  $END$&#10;}" description="Iterate java.util.Iterator" toReformat="true" toShortenFQNames="true">
+    <variable name="ITER" expression="variableOfType(&quot;java.util.Iterator&quot;)" defaultValue="&quot;iterator&quot;" alwaysStopAt="true" />
+    <variable name="TYPE" expression="rightSideType()" defaultValue="&quot;Object&quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="CAST" expression="castToLeftSideType()" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="itli" value="for (int $INDEX$ = 0; $INDEX$ &lt; $LIST$.size(); $INDEX$++) {&#10;  $ELEMENT_TYPE$ $VAR$ = $CAST$ $LIST$.get($INDEX$);&#10;  $END$&#10;}" description="Iterate elements of java.util.List" toReformat="true" toShortenFQNames="true">
+    <variable name="INDEX" expression="suggestIndexName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="LIST" expression="variableOfType(&quot;java.util.List&quot;)" defaultValue="&quot;list&quot;" alwaysStopAt="true" />
+    <variable name="ELEMENT_TYPE" expression="guessElementType(LIST)" defaultValue="&quot;Object&quot;" alwaysStopAt="true" />
+    <variable name="VAR" expression="suggestVariableName()" defaultValue="&quot;o&quot;" alwaysStopAt="true" />
+    <variable name="CAST" expression="castToLeftSideType()" defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="ittok" value="for (java.util.StringTokenizer $TOKENIZER$ = new java.util.StringTokenizer($STRING$); $TOKENIZER$.hasMoreTokens(); ) {&#10;    String $VAR$ = $TOKENIZER_COPY$.nextToken();&#10;    $END$&#10;}&#10;" description="Iterate tokens from String" toReformat="true" toShortenFQNames="true">
+    <variable name="TOKENIZER" expression="suggestVariableName()" defaultValue="&quot;tokenizer&quot;" alwaysStopAt="true" />
+    <variable name="STRING" expression="variableOfType(&quot;java.lang.String&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR" expression="suggestVariableName()" defaultValue="&quot;token&quot;" alwaysStopAt="true" />
+    <variable name="TOKENIZER_COPY" expression="TOKENIZER  " defaultValue="" alwaysStopAt="false" />
+    <context />
+  </template>
+  <template name="ritar" value="for(int $INDEX$ = $ARRAY$.length - 1; $INDEX$ &gt;= 0; $INDEX$--) {&#10;  $ELEMENT_TYPE$ $VAR$ = $ARRAY$[$INDEX$];&#10;  $END$&#10;}" description="Iterate elements of array in reverse order" toReformat="true" toShortenFQNames="true">
+    <variable name="INDEX" expression="suggestIndexName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARRAY" expression="arrayVariable()" defaultValue="&quot;array&quot;" alwaysStopAt="true" />
+    <variable name="ELEMENT_TYPE" expression="componentTypeOf(ARRAY)" defaultValue="" alwaysStopAt="false" />
+    <variable name="VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="iter" value="for ($ELEMENT_TYPE$ $VAR$ : $ITERABLE_TYPE$) {&#10;  $END$&#10;}" description="Iterate Iterable | Array" toReformat="true" toShortenFQNames="true">
+    <variable name="ITERABLE_TYPE" expression="iterableVariable()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ELEMENT_TYPE" expression="iterableComponentType(ITERABLE_TYPE)" defaultValue="&quot;java.lang.Object&quot;" alwaysStopAt="false" />
+    <variable name="VAR" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="inst" value="if ($EXPR$ instanceof $TYPE$) {&#10;  $TYPE$ $VAR1$ = ($TYPE$)$EXPR$;&#10;  $END$&#10;}" description="Checks object type with instanceof and down-casts it" toReformat="true" toShortenFQNames="true">
+    <variable name="EXPR" expression="variableOfType(&quot;Object&quot;)" defaultValue="expr" alwaysStopAt="true" />
+    <variable name="TYPE" expression="&quot;Object&quot;" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR1" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="lst" value="$ARRAY$.last()" description="Fetches last element of an array" toReformat="true" toShortenFQNames="true">
+    <variable name="ARRAY" expression="arrayVariable()" defaultValue="array" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="mn" value="$VAR$ = Math.min($VAR$, $END$)" description="Sets lesser value to a variable" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;double&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="mx" value="$VAR$ = Math.max($VAR$, $END$)" description="Sets greater value to a variable" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;double&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="psvm" value="static void main(String[] args){&#10;  $END$&#10;}" description="main() method declaration" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="main" value="static void main(String[] args){&#10;  $END$&#10;}" description="main() method declaration" toReformat="true" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="lazy" value="$VAR$ = $VAR$ ?: new $TYPE$($END$)" description="Performs lazy initialization" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="variableOfType(&quot;java.lang.Object&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="subtypes(typeOfVariable(VAR))" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="inn" value="if ($VAR$ != null) {&#10;$END$&#10;}" description="Inserts 'if not null' statement" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="ifn" value="if ($VAR$ == null) {&#10;$END$&#10;}" description="Inserts 'if null' statement" toReformat="true" toShortenFQNames="true">
+    <variable name="VAR" expression="suggestFirstVariableName(&quot;Object&quot;)" defaultValue="var" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="geti" value="static $CLASS_NAME$ getInstance() {&#10;  return $VALUE$;&#10;}" description="Inserts singleton method getInstance" toReformat="true" toShortenFQNames="true">
+    <variable name="CLASS_NAME" expression="className" defaultValue="" alwaysStopAt="false" />
+    <variable name="VALUE" expression="variableOfType(CLASS_NAME)" defaultValue="null" alwaysStopAt="true" />
+    <context />
+  </template>
+  <template name="St" value="String " description="String" toReformat="false" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="psf" value="public static final " description="public static final" toReformat="false" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="prsf" value="private static final " description="private static final" toReformat="false" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="psfi" value="public static final int " description="public static final int" toReformat="false" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="psfs" value="public static final String " description="public static final String" toReformat="false" toShortenFQNames="false">
+    <context />
+  </template>
+  <template name="thr" value="throw new " description="throw new" toReformat="false" toShortenFQNames="false">
+    <context />
+  </template>
+</templateSet>

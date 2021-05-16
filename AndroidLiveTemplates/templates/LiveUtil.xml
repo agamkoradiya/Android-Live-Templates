@@ -1,0 +1,13 @@
+<templateSet group="LiveUtil">
+  <template name="util resource" value="sealed class Resource&lt;T&gt;(val data: T?, val message: String?) {&#10;    class Success&lt;T&gt;(data: T) : Resource&lt;T&gt;(data, null)&#10;    class Error&lt;T&gt;(message: String) : Resource&lt;T&gt;(null, message)&#10;}" description="To create sealed resource for response" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+  <template name="util toast" value="fun android.content.Context.toast(message: CharSequence) =&#10;    android.widget.Toast.makeText(this, message, android.widget.Toast.$LENGTH$).show()" description="To create Toast extension function" toReformat="true" toShortenFQNames="true">
+    <variable name="LENGTH" expression="completeSmart()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_TOPLEVEL" value="true" />
+    </context>
+  </template>
+</templateSet>

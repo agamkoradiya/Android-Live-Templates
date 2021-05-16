@@ -1,0 +1,92 @@
+<templateSet group="LiveGradle">
+  <template name="view binding" value="buildFeatures {&#10;    viewBinding true&#10;}" description="To enable view binding" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="data binding" value="apply plugin: 'kotlin-kapt'&#10;&#10;buildFeatures {&#10;    dataBinding true&#10;}" description="To enable data binding" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="view and data binding" value="buildFeatures {&#10;    viewBinding true&#10;    dataBinding true&#10;}&#10;id 'kotlin-kapt'&#10;" description="To enable view and data binding" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="lifecycle depen" value="// ViewModel&#10;implementation &quot;androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1&quot;&#10;&#10;// LiveData&#10;implementation &quot;androidx.lifecycle:lifecycle-livedata-ktx:2.3.1&quot;&#10;&#10;// Lifecycles only (without ViewModel or LiveData)&#10;implementation &quot;androidx.lifecycle:lifecycle-runtime-ktx:2.3.1&quot;&#10;&#10;// Saved state module for ViewModel&#10;implementation &quot;androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1&quot;&#10;&#10;// Annotation processor&#10;kapt &quot;androidx.lifecycle:lifecycle-compiler:2.3.1&quot;&#10;&#10;// alternately - if using Java8, use the following instead of lifecycle-compiler&#10;implementation &quot;androidx.lifecycle:lifecycle-common-java8:2.3.1&quot;" description="To add a dependency for Lifecycle" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="navigation depen" value="// Navigation Component&#10;    implementation &quot;androidx.navigation:navigation-fragment-ktx:2.3.5&quot;&#10;    implementation &quot;androidx.navigation:navigation-ui-ktx:2.3.5&quot;&#10;" description="To add a dependency for Navigation" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="safeargs plugin" value="id 'androidx.navigation.safeargs.kotlin'" description="Add safe args plugin" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="safeargs classpath" value="classpath &quot;androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5&quot;" description="Add safe args classpath" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="paging depen" value="// Paging 3&#10;    implementation &quot;androidx.paging:paging-runtime-ktx:3.0.0&quot;&#10;&#10;" description="To add a dependency for Paging" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="room depen" value="// Room&#10;    // kapt plugin: cut it and paste in plugins&#10;    id 'kotlin-kapt'&#10;    &#10;    implementation &quot;androidx.room:room-runtime:2.3.0&quot;&#10;    // To use Kotlin annotation processing tool (kapt)&#10;    kapt &quot;androidx.room:room-compiler:2.3.0&quot;&#10;    // optional - Kotlin Extensions and Coroutines support for Room&#10;    implementation &quot;androidx.room:room-ktx:2.3.0&quot;&#10;  " description="To add a dependency for Room" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="datastore depen" value="// Data store&#10;// Typed DataStore (Typed API surface, such as Proto)&#10;    implementation &quot;androidx.datastore:datastore:1.0.0-beta01&quot;&#10;// Preferences DataStore (SharedPreferences like APIs)&#10;    implementation &quot;androidx.datastore:datastore-preferences:1.0.0-beta01&quot;&#10;    " description="To add a dependency for Datastore" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="hilt depen" value="// Hilt Dependency Injection&#10;    implementation &quot;com.google.dagger:hilt-android:2.35&quot;&#10;    kapt &quot;com.google.dagger:hilt-compiler:2.35&quot;&#10;" description="To add a dependency for Hilt" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="hilt plugin" value="id 'kotlin-kapt'&#10;id 'dagger.hilt.android.plugin'&#10;" description="Add hilt plugin" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="hilt classpath" value="classpath &quot;com.google.dagger:hilt-android-gradle-plugin:2.35&quot;&#10;" description="Add hilt classpath" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="coroutines depen" value="// Coroutines Dependency&#10;    implementation &quot;org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3&quot;&#10;    implementation &quot;org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3&quot;&#10;" description="To add a dependency for Coroutines" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="retrofit depen" value="// Retrofit&#10;    implementation 'com.squareup.retrofit2:retrofit:2.9.0'&#10;    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'&#10;    implementation &quot;com.squareup.okhttp3:okhttp:4.9.0&quot;&#10;    implementation &quot;com.squareup.okhttp3:logging-interceptor:4.5.0&quot;&#10;" description="To add a dependency for Retrofit" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="coil depen" value="// Coil Image Loading Library&#10;    implementation &quot;io.coil-kt:coil:1.2.1&quot;&#10;" description="To add a dependency for Coil" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="glide depen" value="// Glide Image Loading Library&#10;    implementation 'com.github.bumptech.glide:glide:4.12.0'&#10;    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'" description="To add a dependency for Glide" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+  <template name="easy permission depen" value="// Easy permission library&#10;    implementation 'com.vmadalin:easypermissions-ktx:1.0.0'" description="To add a dependency for Easy permission" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="GROOVY" value="true" />
+    </context>
+  </template>
+</templateSet>
