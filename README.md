@@ -15,6 +15,8 @@
   <img src="https://badgen.net/github/contributors/agamkoradiya/Android-Live-Templates" alt="Contributors Badge"/>
   <img src="https://badgen.net/github/license/agamkoradiya/Android-Live-Templates" alt="License Badge"/>
 </div>
+<h3 align="center"> <i> Checkout master branch for unzip folder </i> </h3>
+<br>
 
 # Content
   - [What is live template? 😮](#what-is-live-template-)
