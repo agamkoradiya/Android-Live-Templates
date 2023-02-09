@@ -6,6 +6,7 @@
   <img src="https://img.shields.io/badge/Follow-%40code.fun-red?style=social&logo=instagram" alt="Instagram Badge"/>
 </div>
 <h5 align="center"> <i> A curated list of Android Live Templates </i> </h5>
+<h3 align="center"> <i> Work in progress: New Live Templates are on the way </i> </h3>
 <img alt="Poster" src="assets/logo_two.png"> </img>
 <div align="center">
   <img src="https://badgen.net/github/stars/agamkoradiya/Android-Live-Templates" alt="Star Badge"/>
