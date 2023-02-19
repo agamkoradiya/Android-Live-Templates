@@ -5,9 +5,8 @@
   <img src="https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99" alt="Star Badge"/>
   <img src="https://img.shields.io/badge/Follow-%40code.fun-red?style=social&logo=instagram" alt="Instagram Badge"/>
 </div>
-<h5 align="center"> <i> A curated list of Android Live Templates </i> </h5>
 <h3 align="center"> <i> Work in progress: New Live Templates are on the way </i> </h3>
-<img alt="Poster" src="assets/logo_two.png"> </img>
+<img alt="Poster" src="assets/cover_pic.png"> </img>
 <div align="center">
   <img src="https://badgen.net/github/stars/agamkoradiya/Android-Live-Templates" alt="Star Badge"/>
   <img src="https://badgen.net/github/forks/agamkoradiya/Android-Live-Templates" alt="Fork Badge"/>
