@@ -14,6 +14,7 @@
 <br>
 
 <table>
+
   <thead>
     <tr>
       <th> Write Only :keyboard: </th>
@@ -34,10 +35,11 @@
   <tr>
     <td colspan="2">  </td>
   </tr>
-  
+     <tr></tr>
+     
 <tr>
- <td> <pre> adapter list </pre> </td>
- <td>
+<td> <pre> adapter list </pre> </td>
+<td>
 
 ```kotlin 
 class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter<$TYPE$, $FILE_NAME$.$HOLDER_NAME$ViewHolder>(DiffCallback()) {
@@ -69,8 +71,40 @@ class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter<$TYPE$, $FILE_NAME$
 }
 ```
 
-  </td>
+</td>
 </tr>
+        <tr></tr>
+        
+<tr>
+ <td> <pre> adapter-normal </pre> </td>
+ <td>
+
+```kotlin
+  class $FILE_NAME$ : androidx.recyclerview.widget.RecyclerView.Adapter<$FILE_NAME$.MyViewHolder>() {
+
+    class MyViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {}
+
+    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): MyViewHolder {
+        return MyViewHolder(
+            android.view.LayoutInflater.from(parent.context).inflate(R.layout.$LAYOUT$, parent, false)
+        )
+    }
+
+    override fun getItemCount(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+}
+```
+
+  </td>
+  </tr>
+  
+  
+  
   
 </table>
 
