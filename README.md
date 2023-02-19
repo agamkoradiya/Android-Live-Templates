@@ -1,22 +1,84 @@
 <h1 align="center"> Android-Live-Templates </h1>
 
 <div align="center">
-  <img src="https://awesome.re/badge.svg" alt="Awesome Badge"/>
   <img src="https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99" alt="Star Badge"/>
-  <img src="https://img.shields.io/badge/Follow-%40code.fun-red?style=social&logo=instagram" alt="Instagram Badge"/>
 </div>
-<h3 align="center"> <i> Work in progress: New Live Templates are on the way </i> </h3>
+<h3 align="center"> Work in progress: New Live Templates & README are on the way </h3>
 <img alt="Poster" src="assets/cover_pic.png"> </img>
 <div align="center">
   <img src="https://badgen.net/github/stars/agamkoradiya/Android-Live-Templates" alt="Star Badge"/>
   <img src="https://badgen.net/github/forks/agamkoradiya/Android-Live-Templates" alt="Fork Badge"/>
-  <img src="https://badgen.net/github/issues/agamkoradiya/Android-Live-Templates" alt="Issues Badge"/>
-  <img src="https://badgen.net/github/prs/agamkoradiya/Android-Live-Templates" alt="PR Badge"/>
   <img src="https://badgen.net/github/contributors/agamkoradiya/Android-Live-Templates" alt="Contributors Badge"/>
   <img src="https://badgen.net/github/license/agamkoradiya/Android-Live-Templates" alt="License Badge"/>
 </div>
-<h3 align="center"> <i> Checkout master branch for unzip folder </i> </h3>
 <br>
+
+<table>
+  <thead>
+    <tr>
+      <th> Write Only :keyboard: </th>
+      <th> You will get :sparkles: </th>
+    </tr>
+ </thead>
+
+  <tr>
+    <td colspan="2">  </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"> 
+      <div name="adapters">
+        :diamonds: Adapters :diamonds: 
+      </div>    
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">  </td>
+  </tr>
+  
+<tr>
+ <td> <pre> adapter list </pre> </td>
+ <td>
+
+```kotlin 
+class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter<$TYPE$, $FILE_NAME$.$HOLDER_NAME$ViewHolder>(DiffCallback()) {
+
+    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): $HOLDER_NAME$ViewHolder {
+        val binding =
+            $BINDING$.inflate(
+                android.view.LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        return $HOLDER_NAME$ViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: $HOLDER_NAME$ViewHolder, position: Int) {
+        val currentItem = getItem(position)
+    }
+
+    inner class $HOLDER_NAME$ViewHolder(private val binding: $BINDING$) :
+        androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {}
+
+    class DiffCallback : androidx.recyclerview.widget.DiffUtil.ItemCallback<$TYPE$>() {
+        override fun areItemsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =
+            oldItem.id == newItem.id
+
+        override fun areContentsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =
+            oldItem == newItem
+    }
+}
+```
+
+  </td>
+</tr>
+  
+</table>
+
+
+
+
+
+
 
 # Content
   - [What is live template? 😮](#what-is-live-template-)
