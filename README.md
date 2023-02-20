@@ -13,106 +13,6 @@
 </div>
 <br>
 
-<table>
-
-  <thead>
-    <tr>
-      <th> Write Only :keyboard: </th>
-      <th> You will get :sparkles: </th>
-    </tr>
- </thead>
-
-  <tr>
-    <td colspan="2">  </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2"> 
-      <div name="adapters">
-        :diamonds: Adapters :diamonds: 
-      </div>    
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">  </td>
-  </tr>
-     <tr></tr>
-     
-<tr>
-<td> <pre> adapter list </pre> </td>
-<td>
-
-```kotlin 
-class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter<$TYPE$, $FILE_NAME$.$HOLDER_NAME$ViewHolder>(DiffCallback()) {
-
-    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): $HOLDER_NAME$ViewHolder {
-        val binding =
-            $BINDING$.inflate(
-                android.view.LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        return $HOLDER_NAME$ViewHolder(binding)
-    }
-
-    override fun onBindViewHolder(holder: $HOLDER_NAME$ViewHolder, position: Int) {
-        val currentItem = getItem(position)
-    }
-
-    inner class $HOLDER_NAME$ViewHolder(private val binding: $BINDING$) :
-        androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {}
-
-    class DiffCallback : androidx.recyclerview.widget.DiffUtil.ItemCallback<$TYPE$>() {
-        override fun areItemsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =
-            oldItem.id == newItem.id
-
-        override fun areContentsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =
-            oldItem == newItem
-    }
-}
-```
-
-</td>
-</tr>
-        <tr></tr>
-        
-<tr>
- <td> <pre> adapter-normal </pre> </td>
- <td>
-
-```kotlin
-  class $FILE_NAME$ : androidx.recyclerview.widget.RecyclerView.Adapter<$FILE_NAME$.MyViewHolder>() {
-
-    class MyViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {}
-
-    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): MyViewHolder {
-        return MyViewHolder(
-            android.view.LayoutInflater.from(parent.context).inflate(R.layout.$LAYOUT$, parent, false)
-        )
-    }
-
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
-
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        TODO("Not yet implemented")
-    }
-}
-```
-
-  </td>
-  </tr>
-  
-  
-  
-  
-</table>
-
-
-
-
-
-
 
 # Content
   - [What is live template? 😮](#what-is-live-template-)
@@ -179,6 +79,171 @@ By using them, you can quickly and intelligently add frequently used code patter
 <br>
 <img alt="How to import all live templates" src="assets/howToImport.gif"> </img>
 <br>
+
+
+
+<table>
+
+  <thead>
+    <tr>
+      <th> Write Only :keyboard: </th>
+      <th> You will get :sparkles: </th>
+    </tr>
+ </thead>
+
+  <tr>
+    <td colspan="2">  </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"> 
+      <div name="adapters">
+        :diamonds: Adapters :diamonds: 
+      </div>    
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">  </td>
+  </tr>
+     <tr></tr>
+     
+<tr>
+<td> <pre> adapter list </pre> </td>
+<td>
+
+```kotlin 
+class $FILE_NAME$ : androidx.recyclerview.widget.ListAdapter<$TYPE$, $FILE_NAME$.$HOLDER_NAME$ViewHolder>(DiffCallback()) {
+
+    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): $HOLDER_NAME$ViewHolder {
+        val binding =
+            $BINDING$.inflate(
+                android.view.LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        return $HOLDER_NAME$ViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: $HOLDER_NAME$ViewHolder, position: Int) {
+        val currentItem = getItem(position)
+    }
+
+    inner class $HOLDER_NAME$ViewHolder(private val binding: $BINDING$) :
+        androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {}
+
+    class DiffCallback : androidx.recyclerview.widget.DiffUtil.ItemCallback<$TYPE$>() {
+        override fun areItemsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =
+            oldItem.id == newItem.id
+
+        override fun areContentsTheSame(oldItem: $TYPE$, newItem: $TYPE$) =
+            oldItem == newItem
+    }
+}
+```
+
+</td>
+</tr>
+        <tr></tr>
+        
+<tr>
+ <td> <pre> adapter normal </pre> </td>
+ <td>
+
+```kotlin
+  class $FILE_NAME$ : androidx.recyclerview.widget.RecyclerView.Adapter<$FILE_NAME$.MyViewHolder>() {
+
+    class MyViewHolder(itemView: android.view.View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {}
+
+    override fun onCreateViewHolder(parent: android.view.ViewGroup, viewType: Int): MyViewHolder {
+        return MyViewHolder(
+            android.view.LayoutInflater.from(parent.context).inflate(R.layout.$LAYOUT$, parent, false)
+        )
+    }
+
+    override fun getItemCount(): Int {
+        TODO("Not yet implemented")
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
+}
+```
+
+  </td>
+</tr>
+
+  <tr>
+    <td colspan="2">  </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"> 
+      <div name="binding-activity">
+        :diamonds: View Binding :diamonds: 
+      </div>    
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">  </td>
+  </tr>
+     <tr></tr>
+     
+<tr>
+ <td> <pre> binding activity </pre> </td>
+ <td>
+
+```kotlin
+class $FILE_NAME$ : androidx.appcompat.app.AppCompatActivity() {
+
+    private lateinit var binding: $BINDING_LAYOUT$
+
+    override fun onCreate(savedInstanceState: android.os.Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = $BINDING_LAYOUT$.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+    }
+}
+```
+
+  </td>
+</tr>
+    
+  <tr>
+ <td> <pre> binding fragment </pre> </td>
+ <td>
+
+```kotlin
+class $FILE_NAME$ : androidx.fragment.app.Fragment() {
+
+    private var _binding: $BINDING_LAYOUT$? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: android.view.LayoutInflater,
+        container: android.view.ViewGroup?,
+        savedInstanceState: android.os.Bundle?
+    ): android.view.View {
+        _binding = $BINDING_LAYOUT$.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+```
+
+  </td>
+</tr>
+  
+  
+</table>
+
+
+
+
+
 
 ## CheatSheet 📄
 
