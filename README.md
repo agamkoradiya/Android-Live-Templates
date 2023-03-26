@@ -37,8 +37,7 @@
 By using them, you can quickly and intelligently add frequently used code patterns and constructs to your code, letting the IDE do the tedious work for you. </samp>
 
 ## Demo 💻
-<img alt="How to import all live templates" src="assets/demoFirst.gif"> </img>
-<img alt="How to import all live templates" src="assets/demoSecond.gif"> </img>
+<img alt="How to import all live templates" src="assets/demoThird.gif"> </img>
 <br>
 
 ## How to import all live templates in 1 minute? 💥
